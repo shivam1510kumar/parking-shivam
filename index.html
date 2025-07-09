@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Airo parkon |</title>
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  
+  
+</head>
+<body>
+   <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg px-4">
+    <a class="navbar-brand" href="index.html"></a>
+   
+  </nav>
+<!-- Top Navbar -->
+<div class="top-bar">
+  <div style="width: 400px; height: 100px; overflow: hidden;">
+  <img src="logoairo.png" alt="AIRO-PARKON Logo" style="width: 400px; height: 100px; object-fit: contain;" />
+</div>
+  <div class="nav-right">
+    <a href="#" title="Facebook"><i class="bi bi-facebook"></i></a>
+    <a href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
+
+    <!-- Menu with dropdown -->
+    <div class="menu-wrapper">
+      <i class="bi bi-list menu-icon" title="Menu" onclick="toggleMenu()"></i>
+    <div class="dropdown-menu" id="dropdownMenu">
+  <a href="aboutus.html">About Us</a>
+  <a href="service.html">Service</a>
+  <a href="contact1.html">Contact</a>
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+  <div class="slider-track" id="sliderTrack">
+    <div class="slide" style="background-image: url('hero1.jpg');"></div>
+    <div class="slide" style="background-image: url('pic1.png');"></div>
+    <div class="slide" style="background-image: url('WhatsApp Image 2025-07-04 at 1.05.44 PM.jpeg');"></div>
+    <div class="slide" style="background-image: url('WhatsApp Image 2025-07-04 at 1.05.46 PM.jpeg');"></div>
+    <div class="slide" style="background-image: url('WhatsApp Image 2025-07-04 at 1.05.51 PM.jpeg');"></div>
+    <div class="slide" style="background-image: url('WhatsApp Image 2025-07-05 at 12.02.46 PM.jpeg');"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="typing-text" id="typingText" style="color: rgb(241, 237, 237); font-size:xx-large;">CAR PARKING <span style="color: red; font-size: larger; ">  SIMPLIFIED</span> </div>
+  </div>
+
+  <div class="dots" id="dots"></div>
+</section>
+
+<script>
+  const track = document.getElementById('sliderTrack');
+  const totalSlides = document.querySelectorAll('.slide').length;
+  const dotsContainer = document.getElementById('dots');
+  let currentSlide = 0;
+
+  // Create dots
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsContainer.appendChild(dot);
+  }
+
+  const dots = document.querySelectorAll('.dot');
+
+  function goToSlide(index) {
+    currentSlide = index;
+    updateSlider();
+  }
+
+  function updateSlider() {
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[currentSlide].classList.add('active');
+  }
+
+  function autoSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateSlider();
+  }
+
+  updateSlider();
+  setInterval(autoSlide, 4000);
+
+  // Remove cursor after typing
+  setTimeout(() => {
+    document.getElementById('typingText').classList.add('done');
+  }, 4500); // match the typing + blinking duration
+</script>
+
+  <!-- Side Buttons -->
+  <div class="side-buttons">
+  <!-- Chat Button -->
+  <a href="#" class="icon-btn" onclick="openChat()" title="Live Chat">
+    <img src="chat.png" alt="Chat" />
+  </a>
+
+  <!-- Call Button -->
+  <a href="tel:+917080658070" class="icon-btn" title="Call Us">
+    <img src="call.png" alt="Call" />
+  </a>
+
+  <!-- WhatsApp Button -->
+  <a
+    href="https://wa.me/917045563737?text=Hello%2C%20I'm%20interested%20in%20your%20car%20parking%20solutions."
+    target="_blank"
+    class="icon-btn"
+    title="Chat on WhatsApp"
+  >
+    <img src="whatspp.jpg" alt="WhatsApp" />
+  </a>
+</div>
+<!-- Chat Popup -->
+<div id="chatPopup" class="chat-popup">
+  <h5>Live Chat</h5>
+  <textarea placeholder="Type your message..." rows="4"></textarea>
+  <button onclick="closeChat()">Send</button>
+</div>
+
+<script>
+  function openChat() {
+    document.getElementById("chatPopup").style.display = "block";
+  }
+
+  function closeChat() {
+    document.getElementById("chatPopup").style.display = "none";
+  }
+</script>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.classList.toggle("show");
+  }
+
+  // Optional: Close menu if clicked outside
+  document.addEventListener("click", function (e) {
+    const menu = document.getElementById("dropdownMenu");
+    const button = document.querySelector(".menu-icon");
+    if (!menu.contains(e.target) && !button.contains(e.target)) {
+      menu.classList.remove("show");
+    }
+  });
+</script>
+
+<!-- Fleet Section -->
+  <div class="section-heading">
+    <h1>Parking and Services</h1>
+  </div>
+  <section id="fleet" class="fleet">
+    <div class="card">
+      <img src="pit-parking.jpg" alt="Pit Parking Solution" />
+      <h3>Pit Parking Solution</h3>
+      <a href="index2.html" class="btn-outline">View More</a>
+    </div>
+    <div class="card">
+      <img src="puzzle car parking.jpg" alt="Puzzle Car Parking" />
+      <h3>Puzzle Car Parking</h3>
+      <a href="index5.html" class="btn-outline">View More</a>
+    </div>
+    <div class="card">
+      <img src="car parking.jpg" alt="Tower Parking" />
+      <h3>Tower Parking</h3>
+      <a href="index3.html" class="btn-outline">View More</a>
+    </div>
+    <div class="card">
+      <img src="sp11.jpg" alt="Stack Car Parking" />
+      <h3>Stack Car Parking</h3>
+      <a href="index4.html" class="btn-outline">View More</a>
+    </div>
+  </section>  
+
+  <!-- Equipment Section -->
+  <section class="car-equipment">
+    <h2>PARKING EQUIPMENTS</h2>
+    <div class="equipment-grid">
+      <div class="item">
+        <img src="stand 1.png" alt="Single Level Stand" />
+        <h3>Single Level Stand</h3>
+        <p>2.0L Turbocharged</p>
+      </div>
+      <div class="item">
+        <img src="stand 2.png" alt="Double Stack System" />
+        <h3>Double Stack System</h3>
+        <p>18″ Alloy</p>
+      </div>
+      <div class="item">
+        <img src="stand -3 .png" alt="Semi-Automatic Platform" />
+        <h3>Semi-Automatic Platform</h3>
+        <p>ABS, Airbags, Lane Assist</p>
+      </div>
+      <div class="item">
+        <img src="stand 4 .png" alt="Triple Stack Basement" />
+        <h3>Triple Stack Basement</h3>
+        <p>18″ Alloy</p>
+      </div>
+    </div>
+    <div class="equipment-btn-container">
+      <a href="index6.html" class="equip-btn">View All Equipment</a>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="bg-gradient"></div>
+    <h2>WHAT OUR CLIENT SAYS</h2>
+    <div id="particles-js"></div>
+    <div class="reviews" id="reviews">
+      <div class="review">
+        <p>"Timely Service Support with Customer Friendly approach is what Newturn delivers for us."</p>
+        <p class="author">– H N SAFAL</p>
+      </div>
+      <div class="review">
+        <p>"Excellent service and prompt maintenance response."</p>
+        <p class="author">– A Client</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Form -->
+  <section class="contact-section">
+  <div class="contact-info fade-in"> 
+
+  <div class="container contact-wrapper">
+    
+    <!-- Left Section -->
+    <div class="left-section">
+      <div class="contact-info">
+        
+        <!-- Name -->
+        <div class="contact-item mb-3">
+          <i class="bi bi-person-fill"></i>
+          <span>
+            <strong style="color: red;">SHUBHAM BHANU YADAV</strong><br>
+            <strong>SHIVAM SINGH</strong>
+          </span>
+        </div>
+    
+        <!-- Phone Numbers -->
+        <div class="contact-item mb-3">
+          <i class="bi bi-telephone-fill"></i>
+          <span>
+            <a href="tel:+919823365388">+91 9823365388</a><br>
+            <a href="tel:+917080658070">+91 7080658070</a>
+          </span>
+        </div>
+    
+        <!-- Email -->
+        <div class="contact-item mb-3">
+          <i class="bi bi-envelope-fill"></i>
+          <a href="mailto:airoparkon@gmail.com">airoparkon@gmail.com</a>
+        </div>
+    
+        <!-- Website -->
+        <div class="contact-item mb-3">
+          <i class="bi bi-globe2"></i>
+          <a href="http://www.airoparkon.com" target="_blank">www.airoparkon.com</a>
+        </div>
+    
+        <!-- Address -->
+        <div class="contact-item mb-3">
+          <i class="bi bi-geo-alt-fill"></i>
+          <span>
+            Survey No. 56/B, Gala No. 7<br>
+            Near Datta Mandir,<br>
+            Opp. Navali Fatak East,<br>
+            Palghar East
+          </span>
+        </div>
+    
+        <!-- Logo -->
+        <div class="text-center mt-4">
+          <img src="Screenshot 2025-07-05 115119.png" alt="Company Logo" class="img-fluid logo" style="max-height: 120px; width: 800px;">
+        </div>
+    
+      </div>
+    </div>
+    
+    <!-- Right Section (Form) -->
+    <div class="right-section">
+      <h2 class="mb-4">Write to Us</h2>
+      <form action="#" method="POST">
+        <div class="mb-3">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" class="form-control" id="phone" name="phone" placeholder="Your Phone Number">
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+      </form>
+    </div>
+</div>
+  </div>
+</section>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 AIRO PARKON PRIVATE LIMITED — Smart Mechanical Parking Solutions</p>
+  </footer>
+
+  <!-- Review Rotation + Particles -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const reviews = Array.from(document.querySelectorAll("#reviews .review"));
+      for (let i = reviews.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [reviews[i], reviews[j]] = [reviews[j], reviews[i]];
+      }
+      let current = 0;
+      reviews.forEach((r, i) => r.classList.toggle("active", i === current));
+      setInterval(() => {
+        reviews[current].classList.remove("active");
+        current = (current + 1) % reviews.length;
+        reviews[current].classList.add("active");
+      }, 5000);
+
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          color: { value: "#ffffff" },
+          opacity: { value: 0.3 },
+          size: { value: 3 },
+          move: { enable: true, speed: 0.5 }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: { onhover: { enable: false } }
+        }
+      });
+    });
+  </script>
+
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

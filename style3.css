@@ -1,0 +1,59 @@
+/* Reset & base */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; background: #fafafa; }
+
+/* Header & Nav */
+.site-header { background: #002244; padding: 15px 0; }
+nav { max-width: 1200px; margin: auto; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; }
+nav h1 { color: #fff; }
+.nav-menu { list-style: none; display: flex; gap: 20px; }
+.nav-menu a { color: #fff; text-decoration: none; font-weight: 500; }
+
+/* Hero */
+.hero { background: url('hero-bg.jpg') no-repeat center/cover; height: 60vh; display: flex; align-items: center; justify-content: center; }
+.hero-content { text-align: center; color: #fff; background: rgba(0,0,0,0.4); padding: 30px; border-radius: 8px; }
+.hero-content h2 { font-size: 2.5rem; margin-bottom: 10px; }
+.hero-content p { font-size: 1.1rem; margin-bottom: 20px; }
+.cta-btn { background: #ff6600; color: #fff; padding: 12px 25px; font-size: 1rem; text-transform: uppercase; border-radius: 5px; text-decoration: none; }
+
+/* Equipment Cards */
+main { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+.equipment { background: #fff; margin-bottom: 40px; border-radius: 8px; overflow: hidden; display: flex; flex-wrap: wrap; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+.equipment figure { flex: 1 1 300px; margin: 0; }
+.equipment img { width: 100%; display: block; }
+figcaption { padding: 20px; background: #003366; color: #fff; text-align: center; }
+figcaption h3 { font-size: 1.4rem; line-height: 1.2; }
+figcaption span { font-size: 0.9rem; opacity: 0.8; }
+
+/* Details Section */
+.details { flex: 2 1 400px; padding: 20px; }
+.details p { margin-bottom: 15px; }
+.details strong { color: #002244; }
+
+/* Footer */
+footer { background: #002244; color: #fff; text-align: center; padding: 20px 0; margin-top: 60px; }
+.footer-content a { color: #ffcc00; text-decoration: none; }
+@media (max-width: 768px) {
+.equipment { flex-direction: column; }
+}
+
+
+/*responsive*/
+
+/* Mobile-first: base styles apply to all devices */
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  /* styles for tablets & small laptops */
+}
+
+/* Desktop and up */
+@media (min-width: 992px) {
+  /* styles for desktops */
+}
+
+/* Large desktops */
+@media (min-width: 1200px) {
+  /* styles for very large screens */
+}
+

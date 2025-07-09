@@ -1,0 +1,88 @@
+.contact-header {
+  background-color: #002885;
+  padding: 60px 0;
+  color: white;
+}
+.contact-header h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+}
+.contact-header p {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #cfd8dc;
+}
+.contact-section h3 {
+  font-size: 1.8rem;
+}
+.contact-section p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+/* contact form Hover styling */
+.nav-contact-text {
+  color: white;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+.nav-contact-text:hover {
+  color: #00bcd4;
+  text-decoration: underline;
+}
+
+/* Modal animation */
+.modal.fade .modal-dialog {
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.modal.fade.show .modal-dialog {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Enhanced input styles */
+.form-control {
+  border: 2px solid #ccc;
+  transition: all 0.3s ease-in-out;
+  background-color: #fff;
+}
+
+.form-control:hover {
+  border-color: #00bcd4;
+  box-shadow: 0 0 5px rgba(0, 188, 212, 0.3);
+}
+
+.form-control:focus {
+  border-color: #00bcd4;
+  box-shadow: 0 0 8px rgba(0, 188, 212, 0.5);
+  background-color: #fefefe;
+}
+
+/* Button hover animation */
+.btn-custom {
+  background-color: #00bcd4;
+  color: #fff;
+  border: none;
+  padding: 10px 30px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-custom:hover {
+  background-color: #008fa1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Modal smooth open animation */
+.modal.fade .modal-dialog {
+  transform: translateY(-30px);
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+.modal.fade.show .modal-dialog {
+  transform: translateY(0);
+  opacity: 1;
+}
